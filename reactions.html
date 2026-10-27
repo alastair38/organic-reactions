@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Visual reaction lab for Higher Chemistry organic reactions: oxidation, esterification, hydrolysis, fats, soaps, proteins and free radicals." />
+  <title>Reaction Lab | Higher Chemistry Organic Reactions</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%230b8f7b'/%3E%3Cpath d='M32 12 49 22v20L32 52 15 42V22z' fill='none' stroke='%23d9fff7' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23ffc857'/%3E%3C/svg%3E" />
+</head>
+<body data-page="reactions">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="index.html" aria-label="Organic Reactions home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+            <path d="M12 2.7 20 7.3v9.4L12 21.3 4 16.7V7.3L12 2.7Z" />
+            <circle cx="12" cy="12" r="2.3" fill="currentColor" stroke="none" />
+            <path d="m12 9.7 4-2.4M12 14.3l-4 2.4M14 14l2 3.2" />
+          </svg>
+        </span>
+        <span class="brand-text">Organic Reactions<small>Higher Chemistry</small></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="reactions.html" data-nav="reactions" class="active" aria-current="page">Reaction lab</a>
+        <a href="flashcards.html" data-nav="flashcards">Flashcards</a>
+        <a href="quiz.html" data-nav="quiz">Quiz</a>
+        <a href="resources.html" data-nav="resources">Resources</a>
+      </nav>
+
+      <div class="nav-actions">
+        <span class="progress-pill" title="Revision plan progress"><b id="navProgress">0%</b> plan</span>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Switch to dark theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M20.4 14.7A8.5 8.5 0 0 1 9.3 3.6 8.5 8.5 0 1 0 20.4 14.7Z" /></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="shell page-hero">
+      <p class="eyebrow">Visual reaction lab</p>
+      <h1>See the reaction. <span class="grad">Then draw it.</span></h1>
+      <p class="lede">Each card gives you the transformation, the reagent and conditions, the observation, and an exam tip. Use the animation button to watch the key change, then close the page and reproduce it from memory.</p>
+      <div class="callout" style="max-width: 850px; margin-top: 24px">
+        <p><b>Higher core</b> cards match the current Higher Chemistry Nature's chemistry content. The final <b>extension</b> card is a bridge to prior National 5 learning and Advanced Higher — useful for understanding, but check your own course notes for what your class must know.</p>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="Filter reactions">
+        <button class="filter-chip active" type="button" data-filter="all" aria-pressed="true">All reactions</button>
+        <button class="filter-chip" type="button" data-filter="oxidation" aria-pressed="false">Oxidation</button>
+        <button class="filter-chip" type="button" data-filter="esters" aria-pressed="false">Esters</button>
+        <button class="filter-chip" type="button" data-filter="hydrolysis" aria-pressed="false">Hydrolysis</button>
+        <button class="filter-chip" type="button" data-filter="unsaturation" aria-pressed="false">Unsaturation</button>
+        <button class="filter-chip" type="button" data-filter="proteins" aria-pressed="false">Proteins</button>
+        <button class="filter-chip" type="button" data-filter="radicals" aria-pressed="false">Radicals</button>
+        <button class="filter-chip" type="button" data-filter="acidbase" aria-pressed="false">Acids + bases</button>
+        <button class="filter-chip" type="button" data-filter="extension" aria-pressed="false">Extension</button>
+      </div>
+    </section>
+
+    <section class="shell section-tight" aria-label="Reaction cards">
+      <div class="reaction-grid">
+
+        <article class="reaction-card" id="oxidation" data-category="oxidation">
+          <div class="reaction-head">
+            <div class="reaction-meta"><span class="badge core">Higher core</span><span class="chip">Oxidation</span></div>
+            <h2>Oxidation of alcohols</h2>
+            <p class="lede">The position of the –OH group decides the product. Primary alcohols climb the oxidation ladder; secondary alcohols stop at a ketone; tertiary alcohols do not react with these oxidising agents.</p>
+          </div>
+          <div class="reaction-body">
+            <div class="svg-wrap">
+              <svg class="chem-svg" viewBox="0 0 620 430" role="img" aria-labelledby="ox-title ox-desc">
+                <title id="ox-title">Oxidation of primary, secondary and tertiary alcohols</title>
+                <desc id="ox-desc">Primary alcohols oxidise to aldehydes and then carboxylic acids. Secondary alcohols oxidise to ketones. Tertiary alcohols do not oxidise.</desc>
+
+                <text x="20" y="24" class="label" font-size="11">PRIMARY</text>
+                <rect x="20" y="36" width="150" height="72" rx="13" class="box box-teal" />
+                <text x="95" y="64" text-anchor="middle" class="label-strong">Primary alcohol</text>
+                <text x="95" y="86" text-anchor="middle" class="mono" font-size="12">CH₃CH₂OH</text>
+
+                <line x1="180" y1="72" x2="240" y2="72" class="arrow" />
+                <path d="m240 72-8-5v10z" class="arrow-head" />
+                <text x="210" y="56" text-anchor="middle" class="label" fill="var(--amber)">[O]</text>
+
+                <g class="anim-fade d1">
+                  <rect x="250" y="36" width="150" height="72" rx="13" class="box box-amber" />
+                  <text x="325" y="64" text-anchor="middle" class="label-strong">Aldehyde</text>
+                  <text x="325" y="86" text-anchor="middle" class="mono" font-size="12">CH₃CHO</text>
+                </g>
+
+                <line x1="410" y1="72" x2="470" y2="72" class="arrow" />
+                <path d="m470 72-8-5v10z" class="arrow-head" />
+                <text x="440" y="56" text-anchor="middle" class="label" fill="var(--amber)">[O]</text>
+
+                <g class="anim-fade d2">
+                  <rect x="480" y="36" width="120" height="72" rx="13" class="box box-coral" />
+                  <text x="540" y="64" text-anchor="middle" class="label-strong">Acid</text>
+                  <text x="540" y="86" text-anchor="middle" class="mono" font-size="11">CH₃COOH</text>
+                </g>
+
+                <text x="20" y="146" class="label" font-size="11">SECONDARY</text>
+                <rect x="20" y="158" width="150" height="72" rx="13" class="box box-teal" />
+                <text x="95" y="186" text-anchor="middle" class="label-strong">Secondary alcohol</text>
+                <text x="95" y="208" text-anchor="middle" class="mono" font-size="10.5">CH₃CH(OH)CH₃</text>
+
+                <line x1="180" y1="194" x2="240" y2="194" class="arrow" />
+                <path d="m240 194-8-5v10z" class="arrow-head" />
+                <text x="210" y="178" text-anchor="middle" class="label" fill="var(--amber)">[O]</text>
+
+                <g class="anim-fade d2">
+                  <rect x="250" y="158" width="150" height="72" rx="13" class="box box-violet" />
+                  <text x="325" y="186" text-anchor="middle" class="label-strong">Ketone</text>
+                  <text x="325" y="208" text-anchor="middle" class="mono" font-size="11">CH₃COCH₃</text>
+                  <text x="420" y="199" class="label" fill="var(--muted)">stops here</text>
+                </g>
+
+                <text x="20" y="268" class="label" font-size="11">TERTIARY</text>
+                <rect x="20" y="280" width="150" height="72" rx="13" class="box box-teal" opacity=".78" />
+                <text x="95" y="308" text-anchor="middle" class="label-strong">Tertiary alcohol</text>
+                <text x="95" y="330" text-anchor="middle" class="mono" font-size="11">(CH₃)₃COH</text>
+
+                <line x1="180" y1="316" x2="240" y2="316" class="arrow" stroke-dasharray="5 5" />
+                <path d="m240 316-8-5v10z" class="arrow-head" />
+                <text x="210" y="300" text-anchor="middle" class="label" fill="var(--coral)">[O]</text>
+
+                <g class="anim-fade d3">
+                  <rect x="250" y="280" width="220" height="72" rx="13" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.3" stroke-dasharray="6 4" />
+                <text x="360" y="308" text-anchor="middle" class="label-strong">No oxidation</text>
+                <text x="360" y="330" text-anchor="middle" class="label">no H on the –OH carbon</text>
+                </g>
+
+                <rect x="20" y="380" width="580" height="34" rx="10" fill="color-mix(in srgb, var(--amber) 8%, var(--surface))" stroke="color-mix(in srgb, var(--amber) 30%, var(--line))" />
+                <text x="310" y="402" text-anchor="middle" class="label" fill="var(--ink)">Orange dichromate(VI) → green · black CuO → brown solid</text>
+              </svg>
+            </div>
+            <div class="reaction-info">
+              <div class="equation">
+                CH₃CH₂OH + <span class="hl">[O]</span> → CH₃CHO + H₂O<br />
+                CH₃CHO + <span class="hl">[O]</span> → CH₃COOH<br />
+                CH₃CH(OH)CH₃ + <span class="hl">[O]</span> → CH₃COCH₃ + H₂O
+              </div>
+              <dl class="facts">
+                <div><dt>Reagents</dt><dd>Hot copper(II) oxide, CuO, or acidified dichromate(VI), usually K₂Cr₂O₇/H₂SO₄.</dd></div>
+                <div><dt>Conditions</dt><dd>Heat. Use excess oxidant and reflux for the carboxylic acid; distil the aldehyde as it forms for partial oxidation.</dd></div>
+                <div><dt>Observation</dt><dd>Dichromate: orange → green. CuO: black → brown solid.</dd></div>
+                <div><dt>Key pattern</dt><dd>Primary → aldehyde → acid; secondary → ketone; tertiary → no reaction.</dd></div>
+              </dl>
+              <details class="exam-tip">
+                <summary>Exam tip: the “no reaction” trap</summary>
+                <p>Always check the carbon carrying the –OH group. A tertiary alcohol has no hydrogen on that carbon, so it cannot be oxidised by these reagents. Do not say “tertiary alcohols are unreactive” in general — they simply do not react with these oxidising agents.</p>
+              </details>
+              <button class="btn secondary small play-btn" type="button" data-anim>Play the oxidation animation</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="reaction-card" id="tests" data-category="oxidation">
+          <div class="reaction-head">
+            <div class="reaction-meta"><span class="badge core">Higher core</span><span class="chip">Oxidation</span><span class="chip">Tests</span></div>
+            <h2>Testing for aldehydes and ketones</h2>
+            <p class="lede">Aldehydes can be oxidised further; ketones cannot (under these conditions). That difference gives three useful tests.</p>
+          </div>
+          <div class="reaction-body">
+            <div class="svg-wrap">
+              <svg class="chem-svg" viewBox="0 0 700 430" role="img" aria-labelledby="test-title test-desc">
+                <title id="test-title">Fehling's and Tollens' tests for aldehydes and ketones</title>
+                <desc id="test-desc">An aldehyde gives a brick-red precipitate with Fehling's solution and a silver mirror with Tollens' reagent. A ketone does not react with either test.</desc>
+
+                <rect x="16" y="24" width="320" height="360" rx="18" fill="color-mix(in srgb, var(--teal) 5%, var(--surface))" stroke="var(--line)" />
+                <text x="176" y="54" text-anchor="middle" class="label-strong" font-size="16">Aldehyde</text>
+                <text x="176" y="72" text-anchor="middle" class="label">positive tests</text>
+
+                <rect x="56" y="98" width="76" height="158" rx="38" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.6" />
+                <rect x="58" y="178" width="72" height="76" rx="34" fill="#2b6cb0" opacity=".75" />
+                <g class="test-red">
+                  <circle cx="76" cy="232" r="5" fill="#b23a2b" />
+                  <circle cx="94" cy="242" r="6" fill="#b23a2b" />
+                  <circle cx="112" cy="232" r="5" fill="#b23a2b" />
+                  <circle cx="102" cy="218" r="4" fill="#b23a2b" />
+                  <circle cx="84" cy="214" r="4" fill="#b23a2b" />
+                </g>
+                <text x="94" y="282" text-anchor="middle" class="label">Fehling's</text>
+                <text x="94" y="300" text-anchor="middle" class="label" fill="var(--coral)">brick-red</text>
+
+                <rect x="184" y="98" width="76" height="158" rx="38" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.6" />
+                <rect x="186" y="178" width="72" height="76" rx="34" fill="var(--surface-2)" stroke="var(--line)" />
+                <g class="silver-mirror">
+                  <path d="M188 180c8 44 66 44 68 0v-8c-10 38-58 38-68 0z" fill="#c8d2d6" stroke="#9aa9af" stroke-width="1" />
+                  <path d="M190 172c12 30 52 30 64 0" fill="none" stroke="#f4f8f8" stroke-width="2" />
+                </g>
+                <text x="222" y="282" text-anchor="middle" class="label">Tollens'</text>
+                <text x="222" y="300" text-anchor="middle" class="label" fill="var(--teal)">silver mirror</text>
+
+                <rect x="364" y="24" width="320" height="360" rx="18" fill="color-mix(in srgb, var(--line) 18%, var(--surface))" stroke="var(--line)" />
+                <text x="524" y="54" text-anchor="middle" class="label-strong" font-size="16">Ketone</text>
+                <text x="524" y="72" text-anchor="middle" class="label">no reaction</text>
+
+                <rect x="404" y="98" width="76" height="158" rx="38" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.6" />
+                <rect x="406" y="178" width="72" height="76" rx="34" fill="#2b6cb0" opacity=".75" />
+                <text x="442" y="282" text-anchor="middle" class="label">Fehling's</text>
+                <text x="442" y="300" text-anchor="middle" class="label" fill="var(--muted)">stays blue</text>
+
+                <rect x="532" y="98" width="76" height="158" rx="38" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.6" />
+                <rect x="534" y="178" width="72" height="76" rx="34" fill="var(--surface-2)" stroke="var(--line)" />
+                <text x="570" y="282" text-anchor="middle" class="label">Tollens'</text>
+                <text x="570" y="300" text-anchor="middle" class="label" fill="var(--muted)">no mirror</text>
+
+                <text x="350" y="414" text-anchor="middle" class="label" fill="var(--muted)">Acidified dichromate(VI) also distinguishes them: aldehyde → green; ketone → stays orange.</text>
+              </svg>
+            </div>
+            <div class="reaction-info">
+              <div class="equation">
+                Aldehyde + [O] → carboxylic acid<br />
+                Ketone + [O] → <span class="hl">no further oxidation</span>
+              </div>
+              <dl class="facts">
+                <div><dt>Fehling's</dt><dd>Blue solution → brick-red precipitate with an aldehyde; no change with a ketone.</dd></div>
+                <div><dt>Tollens'</dt><dd>Clear, colourless reagent → silver mirror with an aldehyde; no change with a ketone.</dd></div>
+                <div><dt>Dichromate</dt><dd>Orange → green with an aldehyde; stays orange with a ketone.</dd></div>
+                <div><dt>Why</dt><dd>The aldehyde has a hydrogen on the carbonyl carbon that can be removed as oxidation proceeds; the ketone does not.</dd></div>
+              </dl>
+              <details class="exam-tip">
+                <summary>Exam tip: describe, then explain</summary>
+                <p>“Brick-red precipitate” and “silver mirror” are observations. If the question asks you to <em>explain</em>, link the observation to the aldehyde being oxidised to a carboxylic acid. Do not just name the test.</p>
+              </details>
+              <button class="btn secondary small play-btn" type="button" data-anim>Play the test animation</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="reaction-card" id="esterification" data-category="esters">
+          <div class="reaction-head">
+            <div class="reaction-meta"><span class="badge core">Higher core</span><span class="chip">Esters</span><span class="chip">Condensation</span></div>
+            <h2>Esterification</h2>
+            <p class="lede">An alcohol and a carboxylic acid join together, lose water and form an ester. The reaction is reversible, so conditions and product removal matter.</p>
+          </div>
+          <div class="reaction-body">
+            <div class="svg-wrap">
+              <svg class="chem-svg" viewBox="0 0 700 430" role="img" aria-labelledby="est-title est-desc">
+                <title id="est-title">Esterification of ethanol and ethanoic acid</title>
+                <desc id="est-desc">Ethanol and ethanoic acid react in the presence of concentrated sulfuric acid to form ethyl ethanoate and water. The ester link is highlighted.</desc>
+
+                <rect x="28" y="60" width="190" height="90" rx="15" class="box box-teal" />
+                <text x="123" y="88" text-anchor="middle" class="label-strong">Ethanol</text>
+                <text x="123" y="112" text-anchor="middle" class="mono" font-size="14">CH₃CH₂OH</text>
+                <circle cx="185" cy="108" r="18" class="highlight" />
+
+                <text x="236" y="112" text-anchor="middle" class="label-strong" font-size="22">+</text>
+
+                <rect x="258" y="60" width="220" height="90" rx="15" class="box box-amber" />
+                <text x="368" y="88" text-anchor="middle" class="label-strong">Ethanoic acid</text>
+                <text x="368" y="112" text-anchor="middle" class="mono" font-size="14">CH₃COOH</text>
+                <circle cx="418" cy="108" r="21" class="highlight" />
+
+                <path d="M180 168c0 32 90 42 165 42 84 0 160-12 160-48" fill="none" class="arrow" stroke-dasharray="6 5" />
+                <path d="m505 162-7 7 10 4z" class="arrow-head" />
+                <text x="360" y="196" text-anchor="middle" class="label" fill="var(--teal)">conc. H₂SO₄, warm</text>
+
+                <g class="anim-fade d1">
+                  <rect x="70" y="244" width="300" height="88" rx="15" class="box box-violet" />
+                  <text x="220" y="272" text-anchor="middle" class="label-strong">Ethyl ethanoate</text>
+                  <text x="220" y="298" text-anchor="middle" class="mono" font-size="13">CH₃CO<tspan fill="var(--coral)">O</tspan>CH₂CH₃</text>
+                  <text x="220" y="318" text-anchor="middle" class="label" fill="var(--coral)">ester link -COO-</text>
+                </g>
+
+                <text x="392" y="286" text-anchor="middle" class="label-strong" font-size="20">+</text>
+
+                <g class="anim-fade d2">
+                  <rect x="420" y="250" width="120" height="76" rx="15" class="box box-teal" />
+                  <text x="480" y="280" text-anchor="middle" class="label-strong">Water</text>
+                  <text x="480" y="302" text-anchor="middle" class="mono" font-size="14">H₂O</text>
+                </g>
+
+                <text x="350" y="390" text-anchor="middle" class="label" fill="var(--muted)">condensation: two molecules join · one small molecule (water) is eliminated</text>
+              </svg>
+            </div>
+            <div class="reaction-info">
+              <div class="equation">
+                alcohol + carboxylic acid ⇌ <span class="hl">ester</span> + water<br />
+                CH₃CH₂OH + CH₃COOH ⇌ CH₃COOCH₂CH₃ + H₂O
+              </div>
+              <dl class="facts">
+                <div><dt>Type</dt><dd>Condensation (esterification). Not addition — a small molecule is eliminated.</dd></div>
+                <div><dt>Catalyst</dt><dd>Concentrated sulfuric acid. It speeds up the reaction and helps remove water.</dd></div>
+                <div><dt>Naming</dt><dd>Alcohol → –yl; acid → –oate. Ethanol + ethanoic acid → ethyl ethanoate.</dd></div>
+                <div><dt>Uses</dt><dd>Flavourings, fragrances and solvents for non-polar compounds.</dd></div>
+              </dl>
+              <details class="exam-tip">
+                <summary>Exam tip: reversible arrow and yield</summary>
+                <p>The reaction is reversible. Removing the ester as it forms (or removing water) shifts the equilibrium to the right and increases the yield. A catalyst does not change the equilibrium position — it only helps equilibrium arrive sooner.</p>
+              </details>
+              <button class="btn secondary small play-btn" type="button" data-anim>Play the condensation animation</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="reaction-card" id="hydrolysis" data-category="hydrolysis">
+          <div class="reaction-head">
+            <div class="reaction-meta"><span class="badge core">Higher core</span><span class="chip">Hydrolysis</span></div>
+            <h2>Hydrolysis of esters</h2>
+            <p class="lede">Water breaks the ester link. Acid hydrolysis gives the carboxylic acid and alcohol; alkaline hydrolysis gives a carboxylate salt and alcohol.</p>
+          </div>
+          <div class="reaction-body">
+            <div class="svg-wrap">
+              <svg class="chem-svg" viewBox="0 0 700 430" role="img" aria-labelledby="hyd-title hyd-desc">
+                <title id="hyd-title">Acid and alkaline hydrolysis of ethyl ethanoate</title>
+                <desc id="hyd-desc">Acid hydrolysis of ethyl ethanoate gives ethanoic acid and ethanol. Alkaline hydrolysis gives sodium ethanoate and ethanol.</desc>
+
+                <text x="22" y="34" class="label-strong" font-size="14">Acid hydrolysis</text>
+                <text x="22" y="52" class="label">reversible · acid catalyst</text>
+
+                <rect x="22" y="74" width="210" height="76" rx="14" class="box box-violet" />
+                <text x="127" y="102" text-anchor="middle" class="label-strong">Ethyl ethanoate</text>
+                <text x="127" y="126" text-anchor="middle" class="mono" font-size="11.5">CH₃COOCH₂CH₃</text>
+
+                <line x1="238" y1="112" x2="326" y2="112" class="arrow" />
+                <path d="m326 112-8-5v10z" class="arrow-head" />
+                <text x="282" y="96" text-anchor="middle" class="label" fill="var(--blue)">H₂O, H⁺</text>
+                <text x="282" y="134" text-anchor="middle" class="label" fill="var(--blue)">⇌</text>
+
+                <g class="anim-fade d1">
+                  <rect x="334" y="74" width="150" height="76" rx="14" class="box box-coral" />
+                  <text x="409" y="102" text-anchor="middle" class="label-strong">Ethanoic acid</text>
+                  <text x="409" y="126" text-anchor="middle" class="mono" font-size="12">CH₃COOH</text>
+                </g>
+
+                <text x="499" y="120" text-anchor="middle" class="label-strong" font-size="19">+</text>
+
+                <g class="anim-fade d2">
+                  <rect x="520" y="74" width="156" height="76" rx="14" class="box box-teal" />
+                  <text x="598" y="102" text-anchor="middle" class="label-strong">Ethanol</text>
+                  <text x="598" y="126" text-anchor="middle" class="mono" font-size="12">CH₃CH₂OH</text>
+                </g>
+
+                <line x1="22" y1="192" x2="678" y2="192" stroke="var(--line)" stroke-dasharray="2 7" />
+
+                <text x="22" y="226" class="label-strong" font-size="14">Alkaline hydrolysis</text>
+                <text x="22" y="244" class="label">irreversible · NaOH(aq), heat</text>
+
+                <rect x="22" y="266" width="210" height="76" rx="14" class="box box-violet" />
+                <text x="127" y="294" text-anchor="middle" class="label-strong">Ethyl ethanoate</text>
+                <text x="127" y="318" text-anchor="middle" class="mono" font-size="11.5">CH₃COOCH₂CH₃</text>
+
+                <line x1="238" y1="304" x2="326" y2="304" class="arrow" />
+                <path d="m326 304-8-5v10z" class="arrow-head" />
+                <text x="282" y="288" text-anchor="middle" class="label" fill="var(--blue)">OH⁻, heat</text>
+
+                <g class="anim-fade d1">
+                  <rect x="334" y="266" width="160" height="76" rx="14" class="box box-coral" />
+                  <text x="414" y="294" text-anchor="middle" class="label-strong">Sodium ethanoate</text>
+                  <text x="414" y="318" text-anchor="middle" class="mono" font-size="12">CH₃COONa</text>
+                </g>
+
+                <text x="508" y="312" text-anchor="middle" class="label-strong" font-size="19">+</text>
+
+                <g class="anim-fade d2">
+                  <rect x="526" y="266" width="150" height="76" rx="14" class="box box-teal" />
+                  <text x="601" y="294" text-anchor="middle" class="label-strong">Ethanol</text>
+                  <text x="601" y="318" text-anchor="middle" class="mono" font-size="12">CH₃CH₂OH</text>
+                </g>
+
+                <rect x="22" y="374" width="654" height="34" rx="10" fill="color-mix(in srgb, var(--blue) 8%, var(--surface))" stroke="color-mix(in srgb, var(--blue) 30%, var(--line))" />
+                <text x="349" y="396" text-anchor="middle" class="label" fill="var(--ink)">Acidify the alkaline product to recover the carboxylic acid.</text>
+              </svg>
+            </div>
+            <div class="reaction-info">
+              <div class="equation">
+                ester + water ⇌ alcohol + carboxylic acid<br />
+                ester + NaOH → alcohol + sodium carboxylate
+              </div>
+              <dl class="facts">
+                <div><dt>Acid hydrolysis</dt><dd>Reversible. Produces the parent alcohol and carboxylic acid.</dd></div>
+                <div><dt>Alkaline hydrolysis</dt><dd>Effectively irreversible. Produces the alcohol and the carboxylate salt; acidify to get the acid.</dd></div>
+                <div><dt>Fats and oils</dt><dd>Alkaline hydrolysis of a triglyceride is saponification: glycerol + three soap molecules.</dd></div>
+                <div><dt>Exam language</dt><dd>Hydrolysis breaks a bond using water. Condensation is the reverse: joins molecules while eliminating water.</dd></div>
+              </dl>
+              <details class="exam-tip">
+                <summary>Exam tip: read the condition before naming products</summary>
+                <p>If the question says “hydrolysed with water”, name the acid and alcohol. If it says “hydrolysed with sodium hydroxide”, name the sodium carboxylate salt and the alcohol. This is a common source of lost marks.</p>
+              </details>
+              <button class="btn secondary small play-btn" type="button" data-anim>Play the hydrolysis animation</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="reaction-card" id="fats" data-category="unsaturation">
+          <div class="reaction-head">
+            <div class="reaction-meta"><span class="badge core">Higher core</span><span class="chip">Fats &amp; oils</span><span class="chip">Addition</span></div>
+            <h2>Fats, oils and the bromine test</h2>
+            <p class="lede">Fats and oils are triglycerides. Their fatty acid chains may be saturated or unsaturated. Bromine adds across C=C bonds, so the test reveals unsaturation.</p>
+          </div>
+          <div class="reaction-body">
+            <div class="svg-wrap">
+              <svg class="chem-svg" viewBox="0 0 700 450" role="img" aria-labelledby="fat-title fat-desc">
+                <title id="fat-title">Triglyceride structure and bromine water test</title>
+                <desc id="fat-desc">A triglyceride has a glycerol backbone and three fatty acid chains. Bromine water is decolourised by an unsaturated oil but not by a saturated fat.</desc>
+
+                <text x="24" y="34" class="label-strong" font-size="14">Triglyceride</text>
+                <text x="24" y="52" class="label">glycerol + 3 fatty acids</text>
+
+                <path d="M62 92v142" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M62 110h46l20-16 20 16 20-16 20 16 20-16 20 16" fill="none" stroke="var(--teal)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M62 164h46l20-16 20 16 20-16 20 16 20-16 20 16" fill="none" stroke="var(--teal)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M62 218h46l20-16 20 16 20-16 20 16 20-16 20 16" fill="none" stroke="var(--coral)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="188" cy="196" r="5" fill="var(--coral)" />
+                <text x="200" y="201" class="label" fill="var(--coral)">C=C kink</text>
+                <text x="62" y="264" text-anchor="middle" class="label">glycerol</text>
+                <text x="220" y="264" text-anchor="middle" class="label">fatty acid chains</text>
+
+                <line x1="330" y1="40" x2="330" y2="410" stroke="var(--line)" stroke-dasharray="2 7" />
+
+                <text x="400" y="34" text-anchor="middle" class="label-strong" font-size="14">Bromine water test</text>
+
+                <rect x="358" y="74" width="84" height="178" rx="42" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.6" />
+                <rect x="360" y="150" width="80" height="100" rx="40" fill="#c56b07" class="bromine-orange" />
+                <text x="400" y="278" text-anchor="middle" class="label">saturated fat</text>
+                <text x="400" y="296" text-anchor="middle" class="label" fill="var(--amber)">stays orange</text>
+
+                <rect x="526" y="74" width="84" height="178" rx="42" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.6" />
+                <rect x="528" y="150" width="80" height="100" rx="40" fill="#c56b07" class="bromine-orange bromine-fade" />
+                <rect x="528" y="150" width="80" height="100" rx="40" fill="var(--surface-2)" class="bromine-clear" stroke="var(--line)" />
+                <text x="568" y="278" text-anchor="middle" class="label">unsaturated oil</text>
+                <text x="568" y="296" text-anchor="middle" class="label" fill="var(--teal)">decolourised</text>
+
+                <text x="568" y="330" text-anchor="middle" class="label" fill="var(--coral)">Br₂ adds across C=C</text>
+                <text x="400" y="330" text-anchor="middle" class="label" fill="var(--muted)">no C=C</text>
+
+                <text x="350" y="380" text-anchor="middle" class="label" fill="var(--muted)">More double bonds → more bromine solution decolourised.</text>
+              </svg>
+            </div>
+            <div class="reaction-info">
+              <div class="equation">
+                unsaturated oil + Br₂ → brominated oil<br />
+                <span class="hl">orange-brown → colourless</span>
+              </div>
+              <dl class="facts">
+                <div><dt>Structure</dt><dd>Triglyceride: glycerol backbone + three fatty acid chains joined by ester links.</dd></div>
+                <div><dt>Melting point</dt><dd>More unsaturation → more kinks → poorer packing → weaker London dispersion forces → lower melting point.</dd></div>
+                <div><dt>Test</dt><dd>Bromine water is decolourised quickly by an unsaturated oil; a saturated fat does not decolourise it.</dd></div>
+                <div><dt>Type</dt><dd>Addition across the C=C double bond.</dd></div>
+              </dl>
+              <details class="exam-tip">
+                <summary>Exam tip: “decolourised”, not “clear”</summary>
+                <p>Say the orange-brown bromine solution is <b>decolourised</b>. If you write “it goes clear”, you may lose the mark because “clear” can mean transparent, not colourless. Also link the result to addition across C=C.</p>
+              </details>
+              <button class="btn secondary small play-btn" type="button" data-anim>Play the bromine test animation</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="reaction-card" id="soap" data-category="hydrolysis">
+          <div class="reaction-head">
+            <div class="reaction-meta"><span class="badge core">Higher core</span><span class="chip">Soaps</span><span class="chip">Emulsions</span></div>
+            <h2>Soaps, micelles and emulsions</h2>
+            <p class="lede">Alkaline hydrolysis of a fat or oil produces soap. The soap ion has a water-loving head and an oil-loving tail, which is why it can lift grease into water.</p>
+          </div>
+          <div class="reaction-body">
+            <div class="svg-wrap">
+              <svg class="chem-svg" viewBox="0 0 700 460" role="img" aria-labelledby="soap-title soap-desc">
+                <title id="soap-title">Soap micelle removing oil</title>
+                <desc id="soap-desc">A soap ion has a hydrophilic ionic head and a hydrophobic hydrocarbon tail. The tails dissolve in oil and the heads remain in water, forming a micelle that suspends the oil.</desc>
+
+                <rect x="20" y="20" width="660" height="420" rx="22" fill="color-mix(in srgb, var(--blue) 6%, var(--surface))" stroke="var(--line)" />
+                <text x="350" y="48" text-anchor="middle" class="label-strong" font-size="15">Water</text>
+                <text x="350" y="66" text-anchor="middle" class="label">hydrophilic heads face the water</text>
+
+                <circle cx="350" cy="222" r="84" fill="color-mix(in srgb, var(--amber) 68%, var(--surface))" stroke="color-mix(in srgb, var(--amber) 80%, var(--line))" stroke-width="2" />
+                <text x="350" y="216" text-anchor="middle" class="label-strong" font-size="15">Oil / grease</text>
+                <text x="350" y="238" text-anchor="middle" class="label" font-size="9">tails dissolve here</text>
+
+                <g stroke="var(--teal)" stroke-width="2.2" stroke-linecap="round" class="micelle-tail">
+                  <line x1="350" y1="138" x2="350" y2="168" />
+                  <line x1="350" y1="306" x2="350" y2="276" />
+                  <line x1="266" y1="222" x2="296" y2="222" />
+                  <line x1="434" y1="222" x2="404" y2="222" />
+                  <line x1="291" y1="163" x2="312" y2="184" />
+                  <line x1="409" y1="281" x2="388" y2="260" />
+                  <line x1="409" y1="163" x2="388" y2="184" />
+                  <line x1="291" y1="281" x2="312" y2="260" />
+                  <line x1="270" y1="176" x2="300" y2="192" />
+                  <line x1="430" y1="268" x2="400" y2="252" />
+                  <line x1="430" y1="176" x2="400" y2="192" />
+                  <line x1="270" y1="268" x2="300" y2="252" />
+                </g>
+                <g fill="var(--teal)" class="micelle-head">
+                  <circle cx="350" cy="132" r="7" />
+                  <circle cx="350" cy="312" r="7" />
+                  <circle cx="260" cy="222" r="7" />
+                  <circle cx="440" cy="222" r="7" />
+                  <circle cx="286" cy="157" r="7" />
+                  <circle cx="414" cy="287" r="7" />
+                  <circle cx="414" cy="157" r="7" />
+                  <circle cx="286" cy="287" r="7" />
+                  <circle cx="264" cy="170" r="7" />
+                  <circle cx="436" cy="274" r="7" />
+                  <circle cx="436" cy="170" r="7" />
+                  <circle cx="264" cy="274" r="7" />
+                </g>
+
+                <text x="132" y="112" class="label" fill="var(--teal)">hydrophilic</text>
+                <text x="132" y="130" class="label">ionic head</text>
+                <path d="M220 126c38 12 68 18 92 18" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-dasharray="4 4" />
+                <text x="132" y="342" class="label" fill="var(--coral)">hydrophobic</text>
+                <text x="132" y="360" class="label">hydrocarbon tail</text>
+                <path d="M220 340c34-10 60-24 78-46" fill="none" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="4 4" />
+
+                <text x="350" y="386" text-anchor="middle" class="label" fill="var(--muted)">Agitation forms micelles. The negatively charged heads repel each other, keeping grease suspended.</text>
+                <text x="350" y="412" text-anchor="middle" class="label" fill="var(--coral)">Hard water: Ca²⁺ / Mg²⁺ + soap → insoluble scum</text>
+              </svg>
+            </div>
+            <div class="reaction-info">
+              <div class="equation">
+                triglyceride + 3NaOH → glycerol + 3 soap<br />
+                soap ion = R–COO⁻Na⁺
+              </div>
+              <dl class="facts">
+                <div><dt>Formation</dt><dd>Alkaline hydrolysis (saponification) of a fat or oil. The fatty acids are neutralised to ionic salts.</dd></div>
+                <div><dt>Micelle</dt><dd>Hydrophobic tails dissolve in grease; hydrophilic heads stay in water. Agitation suspends the grease.</dd></div>
+                <div><dt>Hard water</dt><dd>Ca²⁺ and Mg²⁺ ions form an insoluble precipitate (scum) with soap ions.</dd></div>
+                <div><dt>Emulsifier</dt><dd>Has hydrophilic and hydrophobic parts; stabilises an emulsion instead of letting layers separate.</dd></div>
+              </dl>
+              <details class="exam-tip">
+                <summary>Exam tip: draw the micelle, label both ends</summary>
+                <p>If you are asked to explain cleaning action, use the words <b>hydrophobic tail</b>, <b>hydrophilic head</b>, <b>micelle</b> and <b>suspension</b>. A diagram with labels is often quicker and clearer than a long paragraph.</p>
+              </details>
+              <button class="btn secondary small play-btn" type="button" data-anim>Play the micelle animation</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="reaction-card" id="proteins" data-category="proteins">
+          <div class="reaction-head">
+            <div class="reaction-meta"><span class="badge core">Higher core</span><span class="chip">Proteins</span><span class="chip">Condensation</span></div>
+            <h2>Proteins: condensation and hydrolysis</h2>
+            <p class="lede">Amino acids join by condensation to form peptide links. Hydrolysis reverses the process. Denaturation is different: it changes shape without breaking peptide bonds.</p>
+          </div>
+          <div class="reaction-body">
+            <div class="svg-wrap">
+              <svg class="chem-svg" viewBox="0 0 700 460" role="img" aria-labelledby="prot-title prot-desc">
+                <title id="prot-title">Condensation of amino acids to form a peptide link</title>
+                <desc id="prot-desc">Two amino acids join with elimination of water. The peptide link is CONH. Hydrolysis breaks the link to reform amino acids.</desc>
+
+                <rect x="32" y="56" width="230" height="92" rx="15" class="box box-violet" />
+                <text x="147" y="84" text-anchor="middle" class="label-strong">Amino acid 1</text>
+                <text x="147" y="108" text-anchor="middle" class="mono" font-size="12">H₂N–CH(R₁)–COOH</text>
+                <text x="147" y="130" text-anchor="middle" class="label">amino group + carboxyl group</text>
+
+                <text x="278" y="108" text-anchor="middle" class="label-strong" font-size="20">+</text>
+
+                <rect x="302" y="56" width="230" height="92" rx="15" class="box box-violet" />
+                <text x="417" y="84" text-anchor="middle" class="label-strong">Amino acid 2</text>
+                <text x="417" y="108" text-anchor="middle" class="mono" font-size="12">H₂N–CH(R₂)–COOH</text>
+                <text x="417" y="130" text-anchor="middle" class="label">different R group</text>
+
+                <path d="M300 174c0 38-52 54-98 54" fill="none" class="arrow" />
+                <path d="m202 228 6-8 8 7z" class="arrow-head" />
+                <text x="350" y="184" text-anchor="middle" class="label" fill="var(--violet)">condensation</text>
+                <text x="350" y="202" text-anchor="middle" class="label" fill="var(--violet)">–H₂O</text>
+
+                <g class="anim-fade d1">
+                  <rect x="72" y="266" width="480" height="104" rx="15" class="box box-violet" />
+                  <text x="312" y="294" text-anchor="middle" class="label-strong">Dipeptide</text>
+                  <text x="312" y="320" text-anchor="middle" class="mono" font-size="13">H₂N–CH(R₁)–CO–NH–CH(R₂)–COOH</text>
+                  <text x="312" y="342" text-anchor="middle" class="label" fill="var(--coral)">peptide link -CONH- highlighted</text>
+                  <rect x="294" y="304" width="46" height="24" rx="6" class="peptide-highlight" />
+                </g>
+
+                <g class="anim-fade d2">
+                  <rect x="574" y="276" width="94" height="80" rx="14" class="box box-teal" />
+                  <text x="621" y="306" text-anchor="middle" class="label-strong">Water</text>
+                  <text x="621" y="328" text-anchor="middle" class="mono" font-size="13">H₂O</text>
+                </g>
+
+                <path d="M76 420c88 18 196 18 284 0" fill="none" class="arrow" stroke-dasharray="5 5" />
+                <text x="218" y="423" text-anchor="middle" class="label" fill="var(--blue)">hydrolysis adds water and breaks the peptide link</text>
+              </svg>
+            </div>
+            <div class="reaction-info">
+              <div class="equation">
+                amino acid + amino acid → dipeptide + H₂O<br />
+                protein + water → amino acids (hydrolysis)
+              </div>
+              <dl class="facts">
+                <div><dt>Functional groups</dt><dd>Amino acids contain –NH₂ and –COOH. The R group differs between amino acids.</dd></div>
+                <div><dt>Condensation</dt><dd>The –NH₂ of one amino acid reacts with the –COOH of another, forming –CONH– and water.</dd></div>
+                <div><dt>Hydrolysis</dt><dd>Water breaks peptide links, producing amino acids. Enzymes do this during digestion.</dd></div>
+                <div><dt>Denaturation</dt><dd>Heat or pH changes break intermolecular forces and change shape; peptide bonds stay intact.</dd></div>
+              </dl>
+              <details class="exam-tip">
+                <summary>Exam tip: count the water molecules</summary>
+                <p>Joining <b>n</b> amino acids in one chain forms <b>n − 1</b> peptide links and releases <b>n − 1</b> water molecules. If a question gives four amino acids, look for three peptide links.</p>
+              </details>
+              <button class="btn secondary small play-btn" type="button" data-anim>Play the condensation animation</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="reaction-card" id="radicals" data-category="radicals">
+          <div class="reaction-head">
+            <div class="reaction-meta"><span class="badge core">Higher core</span><span class="chip">Free radicals</span><span class="chip">Skin care</span></div>
+            <h2>Free radical chain reactions</h2>
+            <p class="lede">UV light can break bonds and create radicals. Radical chain reactions have three stages: initiation, propagation and termination.</p>
+          </div>
+          <div class="reaction-body">
+            <div class="svg-wrap">
+              <svg class="chem-svg" viewBox="0 0 760 470" role="img" aria-labelledby="rad-title rad-desc">
+                <title id="rad-title">Free radical chain reaction stages</title>
+                <desc id="rad-desc">Initiation forms radicals. Propagation uses and regenerates radicals. Termination combines radicals to form stable molecules.</desc>
+
+                <g class="anim-fade d1">
+                  <rect x="24" y="38" width="712" height="108" rx="16" fill="color-mix(in srgb, var(--amber) 8%, var(--surface))" stroke="color-mix(in srgb, var(--amber) 30%, var(--line))" />
+                <text x="52" y="70" class="label-strong" font-size="14" fill="var(--amber)">1 · Initiation</text>
+                <text x="52" y="88" class="label">radicals are formed — usually by UV light breaking a bond</text>
+                <text x="410" y="116" text-anchor="middle" class="mono" font-size="18">Cl₂ <tspan fill="var(--amber)">→</tspan> 2Cl•</text>
+                <text x="410" y="137" text-anchor="middle" class="label" font-size="9">one electron from the shared pair goes to each chlorine atom</text>
+                </g>
+
+                <g class="anim-fade d2">
+                  <rect x="24" y="174" width="712" height="140" rx="16" fill="color-mix(in srgb, var(--teal) 7%, var(--surface))" stroke="color-mix(in srgb, var(--teal) 30%, var(--line))" />
+                <text x="52" y="206" class="label-strong" font-size="14" fill="var(--teal)">2 · Propagation</text>
+                <text x="52" y="228" class="label">a radical reacts and another radical is produced — the chain continues</text>
+                <text x="70" y="270" class="mono" font-size="16">Cl• + CH₄ → CH₃• + HCl</text>
+                <text x="70" y="300" class="mono" font-size="16">CH₃• + Cl₂ → CH₃Cl + Cl•</text>
+                <text x="540" y="286" text-anchor="middle" class="label" fill="var(--teal)">Cl• is regenerated</text>
+
+                </g>
+
+                <g class="anim-fade d3">
+                  <rect x="24" y="342" width="712" height="104" rx="16" fill="color-mix(in srgb, var(--coral) 7%, var(--surface))" stroke="color-mix(in srgb, var(--coral) 30%, var(--line))" />
+                <text x="52" y="374" class="label-strong" font-size="14" fill="var(--coral)">3 · Termination</text>
+                <text x="52" y="396" class="label">two radicals combine to form a stable molecule — radicals are removed</text>
+                <text x="70" y="430" class="mono" font-size="15">Cl• + Cl• → Cl₂</text>
+                <text x="380" y="430" class="mono" font-size="15">CH₃• + Cl• → CH₃Cl</text>
+                </g>
+              </svg>
+            </div>
+            <div class="reaction-info">
+              <div class="equation">
+                initiation: Cl₂ → 2Cl•<br />
+                propagation: Cl• + CH₄ → CH₃• + HCl<br />
+                termination: Cl• + Cl• → Cl₂
+              </div>
+              <dl class="facts">
+                <div><dt>Free radical</dt><dd>An atom or molecule with an unpaired electron; highly reactive.</dd></div>
+                <div><dt>Initiation</dt><dd>Radicals are created, often when UV light breaks a bond homolytically.</dd></div>
+                <div><dt>Propagation</dt><dd>A radical is used and another is produced, so the chain continues.</dd></div>
+                <div><dt>Termination</dt><dd>Two radicals combine; no radical remains to continue the chain.</dd></div>
+              </dl>
+              <details class="exam-tip">
+                <summary>Exam tip: classify by what happens to the radical</summary>
+                <p>If radicals appear where there were none, it is initiation. If a radical is on both sides, it is propagation. If radicals disappear into a stable molecule, it is termination. Scavengers are molecules that react with radicals to form stable products.</p>
+              </details>
+              <button class="btn secondary small play-btn" type="button" data-anim>Play the radical chain animation</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="reaction-card" id="acidbase" data-category="acidbase">
+          <div class="reaction-head">
+            <div class="reaction-meta"><span class="badge core">Higher core</span><span class="chip">Acids + bases</span></div>
+            <h2>Carboxylic acids reacting with bases</h2>
+            <p class="lede">Carboxylic acids are weak acids but they still neutralise metal oxides, hydroxides and carbonates. Long-chain fatty acids form soaps when neutralised by alkali.</p>
+          </div>
+          <div class="reaction-body">
+            <div class="svg-wrap">
+              <svg class="chem-svg" viewBox="0 0 700 430" role="img" aria-labelledby="acid-title acid-desc">
+                <title id="acid-title">Reactions of carboxylic acids with bases</title>
+                <desc id="acid-desc">Carboxylic acids react with metal oxides and hydroxides to form a salt and water, and with carbonates to form a salt, water and carbon dioxide.</desc>
+
+                <rect x="24" y="44" width="652" height="88" rx="15" class="box" />
+                <text x="54" y="76" class="label-strong" font-size="14">Metal oxide</text>
+                <text x="54" y="98" class="mono" font-size="13">2CH₃COOH + CuO → (CH₃COO)₂Cu + H₂O</text>
+                <text x="54" y="118" class="label">acid + metal oxide → salt + water</text>
+
+                <rect x="24" y="154" width="652" height="88" rx="15" class="box" />
+                <text x="54" y="186" class="label-strong" font-size="14">Metal hydroxide</text>
+                <text x="54" y="208" class="mono" font-size="13">CH₃COOH + NaOH → CH₃COONa + H₂O</text>
+                <text x="54" y="228" class="label">acid + metal hydroxide → salt + water</text>
+
+                <rect x="24" y="264" width="652" height="88" rx="15" class="box" />
+                <text x="54" y="296" class="label-strong" font-size="14">Metal carbonate</text>
+                <text x="54" y="318" class="mono" font-size="13">2CH₃COOH + Na₂CO₃ → 2CH₃COONa + H₂O + CO₂</text>
+                <text x="54" y="338" class="label">acid + metal carbonate → salt + water + carbon dioxide</text>
+
+                <text x="350" y="390" text-anchor="middle" class="label" fill="var(--muted)">Salt names end in –anoate: ethanoate, propanoate, butanoate.</text>
+              </svg>
+            </div>
+            <div class="reaction-info">
+              <div class="equation">
+                acid + metal oxide → salt + water<br />
+                acid + metal hydroxide → salt + water<br />
+                acid + metal carbonate → salt + water + CO₂
+              </div>
+              <dl class="facts">
+                <div><dt>Salt naming</dt><dd>Ethanoic acid → ethanoate; propanoic acid → propanoate.</dd></div>
+                <div><dt>Carbonate test</dt><dd>Carbon dioxide is produced; it turns limewater milky.</dd></div>
+                <div><dt>Soap link</dt><dd>Long-chain fatty acid + NaOH → sodium salt of the fatty acid (soap) + water.</dd></div>
+                <div><dt>Weak acid</dt><dd>Carboxylic acids are weak acids: they are only partially ionised in water, so their pH is higher than a strong acid of the same concentration.</dd></div>
+              </dl>
+              <details class="exam-tip">
+                <summary>Exam tip: balance the carbonate equation</summary>
+                <p>Carbonate reactions produce two carboxylic acid salt units per carbonate ion, so remember the coefficient 2 in front of the acid and the salt. Check that atoms and charges balance.</p>
+              </details>
+            </div>
+          </div>
+        </article>
+
+        <article class="reaction-card" id="extension" data-category="extension">
+          <div class="reaction-head">
+            <div class="reaction-meta"><span class="badge extension">Extension</span><span class="chip">Bridge to Advanced Higher</span></div>
+            <h2>Alkenes, dehydration and reduction</h2>
+            <p class="lede">These transformations are useful for understanding the bigger organic map. They are not all mandatory in the current Higher course, so treat this as a bridge to National 5 prior learning and Advanced Higher.</p>
+          </div>
+          <div class="reaction-body">
+            <div class="svg-wrap">
+              <svg class="chem-svg" viewBox="0 0 760 430" role="img" aria-labelledby="ext-title ext-desc">
+                <title id="ext-title">Extension reactions of alkenes and alcohols</title>
+                <desc id="ext-desc">Alkenes can be hydrogenated to alkanes, brominated to dibromoalkanes, hydrated to alcohols, and formed by dehydration of alcohols. Carbonyls can be reduced to alcohols.</desc>
+
+                <rect x="280" y="176" width="200" height="80" rx="16" class="box box-teal" />
+                <text x="380" y="206" text-anchor="middle" class="label-strong">Alkene</text>
+                <text x="380" y="228" text-anchor="middle" class="mono" font-size="13">C=C</text>
+
+                <rect x="34" y="36" width="180" height="68" rx="14" class="box" stroke-dasharray="5 4" />
+                <text x="124" y="62" text-anchor="middle" class="label-strong">Alkane</text>
+                <text x="124" y="84" text-anchor="middle" class="mono" font-size="12">+ H₂ / Ni</text>
+                <line x1="294" y1="176" x2="214" y2="102" class="arrow" stroke-dasharray="5 4" />
+                <path d="M214 102 224 106 217 115z" class="arrow-head" />
+
+                <rect x="550" y="36" width="180" height="68" rx="14" class="box" stroke-dasharray="5 4" />
+                <text x="640" y="62" text-anchor="middle" class="label-strong">Dibromoalkane</text>
+                <text x="640" y="84" text-anchor="middle" class="mono" font-size="12">+ Br₂</text>
+                <line x1="470" y1="176" x2="550" y2="102" class="arrow" stroke-dasharray="5 4" />
+                <path d="M550 102 540 106 547 115z" class="arrow-head" />
+
+                <rect x="34" y="326" width="180" height="68" rx="14" class="box" stroke-dasharray="5 4" />
+                <text x="124" y="352" text-anchor="middle" class="label-strong">Alcohol</text>
+                <text x="124" y="374" text-anchor="middle" class="mono" font-size="12">+ H₂O / H⁺</text>
+                <line x1="294" y1="256" x2="214" y2="326" class="arrow" stroke-dasharray="5 4" />
+                <path d="M214 326 224 322 217 314z" class="arrow-head" />
+
+                <rect x="550" y="326" width="180" height="68" rx="14" class="box" stroke-dasharray="5 4" />
+                <text x="640" y="352" text-anchor="middle" class="label-strong">Alcohol</text>
+                <text x="640" y="374" text-anchor="middle" class="mono" font-size="12">–H₂O / Al₂O₃</text>
+                <line x1="550" y1="326" x2="470" y2="256" class="arrow" stroke-dasharray="5 4" />
+                <path d="m470 256 3 9 8-6z" class="arrow-head" />
+
+                <text x="380" y="304" text-anchor="middle" class="label" fill="var(--muted)">dehydration is the reverse of hydration</text>
+                <text x="380" y="398" text-anchor="middle" class="label" fill="var(--muted)">carbonyl + [H] → alcohol (reduction)</text>
+              </svg>
+            </div>
+            <div class="reaction-info">
+              <div class="equation">
+                alkene + H₂ → alkane (Ni catalyst)<br />
+                alkene + Br₂ → dibromoalkane<br />
+                alkene + H₂O → alcohol (acid catalyst)<br />
+                alcohol → alkene + H₂O (Al₂O₃ or conc. H₂SO₄)
+              </div>
+              <dl class="facts">
+                <div><dt>Why include it?</dt><dd>It completes the functional-group map and explains why alkenes are described as unsaturated.</dd></div>
+                <div><dt>Current Higher</dt><dd>Bromine addition to C=C is core. The other transformations are extension / prior learning unless your teacher says otherwise.</dd></div>
+                <div><dt>Advanced Higher</dt><dd>You will meet mechanisms, Markovnikov's rule and reduction of carbonyls in more detail.</dd></div>
+              </dl>
+              <details class="exam-tip">
+                <summary>Exam tip: label extension answers clearly</summary>
+                <p>In a Higher exam, answer the question that is asked. Use the extension card to deepen understanding of the map, but do not replace the core Higher reactions with Advanced Higher detail unless it is relevant.</p>
+              </details>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="callout amber" style="margin-top: 26px">
+        <p><b>Draw it, don't just read it.</b> Close the page and reproduce one diagram and one equation from memory. Then open the card and check the functional group, the reagent, the condition and the observation. That four-point check is what exam markers look for.</p>
+      </div>
+    </section>
+
+    <section class="shell section" aria-labelledby="watch-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Watch and listen</p>
+          <h2 id="watch-title">Videos for the visual learner</h2>
+        </div>
+        <p>These are curated searches and official topic pages rather than fixed video IDs, so they stay useful even when individual videos move.</p>
+      </div>
+      <div class="grid-3">
+        <a class="resource-card" href="https://www.youtube.com/results?search_query=SQA+Higher+Chemistry+oxidation+of+alcohols" target="_blank" rel="noopener noreferrer">
+          <div class="resource-icon">▶</div>
+          <h3>Oxidation of alcohols</h3>
+          <p class="small">Watch the orange dichromate colour change and the aldehyde/ketone tests.</p>
+          <span class="resource-link">Open YouTube search →</span>
+        </a>
+        <a class="resource-card" href="https://www.youtube.com/results?search_query=esterification+ethanol+ethanoic+acid+higher+chemistry" target="_blank" rel="noopener noreferrer">
+          <div class="resource-icon">▶</div>
+          <h3>Esterification</h3>
+          <p class="small">See the reaction set-up, the fruity smell and the water elimination.</p>
+          <span class="resource-link">Open YouTube search →</span>
+        </a>
+        <a class="resource-card" href="https://www.youtube.com/results?search_query=soap+micelle+grease+chemistry" target="_blank" rel="noopener noreferrer">
+          <div class="resource-icon">▶</div>
+          <h3>Soap micelles</h3>
+          <p class="small">Visualise hydrophobic tails, hydrophilic heads and the formation of micelles.</p>
+          <span class="resource-link">Open YouTube search →</span>
+        </a>
+        <a class="resource-card" href="https://www.youtube.com/results?search_query=free+radical+chain+reaction+initiation+propagation+termination" target="_blank" rel="noopener noreferrer">
+          <div class="resource-icon">▶</div>
+          <h3>Free radical chains</h3>
+          <p class="small">See initiation, propagation and termination with radical equations.</p>
+          <span class="resource-link">Open YouTube search →</span>
+        </a>
+        <a class="resource-card" href="https://www.youtube.com/results?search_query=protein+condensation+hydrolysis+amino+acids" target="_blank" rel="noopener noreferrer">
+          <div class="resource-icon">▶</div>
+          <h3>Proteins</h3>
+          <p class="small">Watch amino acids join by condensation and break apart by hydrolysis.</p>
+          <span class="resource-link">Open YouTube search →</span>
+        </a>
+        <a class="resource-card" href="https://www.bbc.co.uk/bitesize/topics/zybg87h" target="_blank" rel="noopener noreferrer">
+          <div class="resource-icon">BBC</div>
+          <h3>BBC Bitesize videos</h3>
+          <p class="small">Official Higher Chemistry videos, revision guides and quizzes for Nature's chemistry.</p>
+          <span class="resource-link">Open BBC Bitesize →</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+              <path d="M12 2.7 20 7.3v9.4L12 21.3 4 16.7V7.3L12 2.7Z" />
+              <circle cx="12" cy="12" r="2.3" fill="currentColor" stroke="none" />
+            </svg>
+          </span>
+          <span class="brand-text">Organic Reactions<small>Higher Chemistry</small></span>
+        </a>
+        <p>Independent revision resource aligned to the current Higher Chemistry Nature's chemistry content. Always check the current course specification and your teacher's guidance. External links open in a new tab.</p>
+      </div>
+      <div class="footer-links">
+        <a href="Higher-Chemistry-Organic-Reactions-Revision-Plan.md">Markdown plan</a>
+        <a href="index.html#plan">Revision plan</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="resources.html">Resources</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/data.js" defer></script>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A visual, interactive revision plan for organic reactions in Scottish Higher Chemistry: oxidation, esters, fats, soaps, proteins, free radicals, flashcards and quizzes." />
+  <title>Organic Reactions | Higher Chemistry Revision</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%230b8f7b'/%3E%3Cpath d='M32 12 49 22v20L32 52 15 42V22z' fill='none' stroke='%23d9fff7' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23ffc857'/%3E%3C/svg%3E" />
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="index.html" aria-label="Organic Reactions home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+            <path d="M12 2.7 20 7.3v9.4L12 21.3 4 16.7V7.3L12 2.7Z" />
+            <circle cx="12" cy="12" r="2.3" fill="currentColor" stroke="none" />
+            <path d="m12 9.7 4-2.4M12 14.3l-4 2.4M14 14l2 3.2" />
+          </svg>
+        </span>
+        <span class="brand-text">Organic Reactions<small>Higher Chemistry</small></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html" data-nav="home" class="active" aria-current="page">Home</a>
+        <a href="reactions.html" data-nav="reactions">Reaction lab</a>
+        <a href="flashcards.html" data-nav="flashcards">Flashcards</a>
+        <a href="quiz.html" data-nav="quiz">Quiz</a>
+        <a href="resources.html" data-nav="resources">Resources</a>
+      </nav>
+
+      <div class="nav-actions">
+        <span class="progress-pill" title="Revision plan progress"><b id="navProgress">0%</b> plan</span>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Switch to dark theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round">
+            <path d="M20.4 14.7A8.5 8.5 0 0 1 9.3 3.6 8.5 8.5 0 1 0 20.4 14.7Z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="shell hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Higher Chemistry · Nature's chemistry</p>
+        <h1 id="hero-title">Organic reactions, <span class="grad">made visible.</span></h1>
+        <p class="lede">A focused revision plan for the reactions that connect alcohols, carboxylic acids, esters, fats, soaps, proteins and free radicals — with diagrams, animations, flashcards and exam-style practice.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#plan">Start the revision plan <span aria-hidden="true">→</span></a>
+          <a class="btn secondary" href="reactions.html">Open the reaction lab</a>
+        </div>
+        <div class="hero-badges" role="group" aria-label="Resource summary">
+          <span class="pill"><b>2026–27</b> course focus</span>
+          <span class="pill"><b>10</b> visual reaction cards</span>
+          <span class="pill"><b>40</b> flashcards</span>
+          <span class="pill"><b>5</b> quiz formats</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <svg class="chem-svg" viewBox="0 0 520 420" role="presentation">
+          <defs>
+            <radialGradient id="heroGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="var(--teal-2)" stop-opacity=".45" />
+              <stop offset="100%" stop-color="var(--teal)" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+          <circle cx="260" cy="210" r="150" fill="url(#heroGlow)" />
+          <circle cx="260" cy="210" r="128" fill="none" stroke="var(--line)" stroke-width="1.4" stroke-dasharray="4 8" />
+          <circle cx="260" cy="210" r="86" fill="none" stroke="var(--line)" stroke-width="1.2" stroke-dasharray="2 7" />
+          <g class="orbit-ring" stroke="var(--line-strong)" stroke-width="1.6" stroke-dasharray="5 7" fill="none">
+            <circle cx="260" cy="210" r="112" />
+          </g>
+          <g class="orbit-ring reverse" stroke="var(--teal)" stroke-width="1.6" stroke-dasharray="3 9" fill="none" opacity=".75">
+            <circle cx="260" cy="210" r="72" />
+          </g>
+
+          <g class="orbit-node">
+            <rect x="52" y="72" width="128" height="54" rx="16" class="box box-teal" />
+            <text x="116" y="96" text-anchor="middle" class="label-strong">Alcohol</text>
+            <text x="116" y="113" text-anchor="middle" class="label">–OH</text>
+            <line x1="180" y1="99" x2="216" y2="160" stroke="var(--teal)" stroke-width="1.6" stroke-dasharray="4 5" />
+          </g>
+          <g class="orbit-node delay-1">
+            <rect x="340" y="60" width="128" height="54" rx="16" class="box box-amber" />
+            <text x="404" y="84" text-anchor="middle" class="label-strong">Ester</text>
+            <text x="404" y="101" text-anchor="middle" class="label">–COO–</text>
+            <line x1="340" y1="88" x2="305" y2="157" stroke="var(--amber)" stroke-width="1.6" stroke-dasharray="4 5" />
+          </g>
+          <g class="orbit-node delay-2">
+            <rect x="46" y="292" width="138" height="54" rx="16" class="box box-violet" />
+            <text x="115" y="316" text-anchor="middle" class="label-strong">Protein</text>
+            <text x="115" y="333" text-anchor="middle" class="label">–CONH–</text>
+            <line x1="184" y1="318" x2="215" y2="260" stroke="var(--violet)" stroke-width="1.6" stroke-dasharray="4 5" />
+          </g>
+          <g class="orbit-node delay-3">
+            <rect x="332" y="300" width="138" height="54" rx="16" class="box box-coral" />
+            <text x="401" y="324" text-anchor="middle" class="label-strong">Radical</text>
+            <text x="401" y="341" text-anchor="middle" class="label">unpaired e⁻</text>
+            <line x1="332" y1="320" x2="304" y2="263" stroke="var(--coral)" stroke-width="1.6" stroke-dasharray="4 5" />
+          </g>
+
+          <g>
+            <circle cx="260" cy="210" r="54" fill="var(--surface)" stroke="var(--teal)" stroke-width="2" />
+            <circle cx="260" cy="210" r="42" fill="none" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 5" />
+            <text x="260" y="207" text-anchor="middle" font-size="26" font-weight="900" fill="var(--teal)">C</text>
+            <text x="260" y="227" text-anchor="middle" class="label">reaction hub</text>
+          </g>
+          <circle cx="218" cy="165" r="7" fill="var(--amber)" />
+          <circle cx="302" cy="256" r="6" fill="var(--teal)" />
+          <circle cx="236" cy="262" r="5" fill="var(--coral)" />
+        </svg>
+      </div>
+    </section>
+
+    <section class="shell section-tight" aria-label="Plan statistics">
+      <div class="stat-grid">
+        <div class="stat"><strong>6</strong><span>weeks, 30 short sessions</span></div>
+        <div class="stat"><strong>10</strong><span>visual reaction cards</span></div>
+        <div class="stat"><strong>40</strong><span>retrieval flashcards</span></div>
+        <div class="stat"><strong>5</strong><span>quiz formats + exam-style</span></div>
+      </div>
+    </section>
+
+    <section class="shell section" aria-labelledby="map-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">See the whole course</p>
+          <h2 id="map-title">The reaction map</h2>
+        </div>
+        <p>Learn the transformations as a connected story, not isolated facts. Every box is a functional group change you should be able to draw, name and explain.</p>
+      </div>
+
+      <div class="map-wrap">
+        <svg class="chem-svg" viewBox="0 0 1100 720" role="img" aria-labelledby="map-svg-title map-svg-desc">
+          <title id="map-svg-title">Higher Chemistry organic reaction map</title>
+          <desc id="map-svg-desc">Primary alcohols oxidise to aldehydes then carboxylic acids. Secondary alcohols oxidise to ketones. Tertiary alcohols do not oxidise. Carboxylic acids and alcohols form esters by condensation; esters hydrolyse back. Amino acids condense to proteins and hydrolyse back. Unsaturated oils add bromine. Fats and oils undergo alkaline hydrolysis to soap and glycerol.</desc>
+
+          <rect x="18" y="18" width="1064" height="684" rx="24" fill="var(--surface-3)" stroke="var(--line)" />
+
+          <text x="44" y="54" class="label-strong" font-size="15">Oxidation ladder</text>
+          <text x="44" y="74" class="label" font-size="11">Each step increases the oxygen-to-hydrogen ratio</text>
+
+          <g>
+            <rect x="44" y="96" width="220" height="72" rx="14" class="box box-teal" />
+            <text x="154" y="125" text-anchor="middle" class="label-strong">Primary alcohol</text>
+            <text x="154" y="145" text-anchor="middle" class="label">–OH on an end carbon</text>
+
+            <line x1="272" y1="132" x2="332" y2="132" class="arrow" />
+            <path d="m332 132-8-5v10z" class="arrow-head" />
+            <text x="302" y="118" text-anchor="middle" class="label" fill="var(--amber)">[O]</text>
+
+            <rect x="340" y="96" width="180" height="72" rx="14" class="box box-amber" />
+            <text x="430" y="125" text-anchor="middle" class="label-strong">Aldehyde</text>
+            <text x="430" y="145" text-anchor="middle" class="label">–CHO</text>
+
+            <line x1="528" y1="132" x2="588" y2="132" class="arrow" />
+            <path d="m588 132-8-5v10z" class="arrow-head" />
+            <text x="558" y="118" text-anchor="middle" class="label" fill="var(--amber)">[O]</text>
+
+            <rect x="596" y="96" width="220" height="72" rx="14" class="box box-coral" />
+            <text x="706" y="125" text-anchor="middle" class="label-strong">Carboxylic acid</text>
+            <text x="706" y="145" text-anchor="middle" class="label">–COOH</text>
+
+            <line x1="824" y1="132" x2="876" y2="132" class="arrow" />
+            <path d="m876 132-8-5v10z" class="arrow-head" />
+            <text x="850" y="115" text-anchor="middle" class="label" fill="var(--teal)">+ alcohol</text>
+            <text x="850" y="154" text-anchor="middle" class="label" fill="var(--teal)">H⁺</text>
+
+            <rect x="884" y="96" width="172" height="72" rx="14" class="box box-amber" />
+            <text x="970" y="125" text-anchor="middle" class="label-strong">Ester</text>
+            <text x="970" y="145" text-anchor="middle" class="label">–COO–</text>
+
+            <path d="M970 178c0 16-30 16-30 0" fill="none" class="arrow" />
+            <path d="m940 178 8 5v-10z" class="arrow-head" />
+            <text x="970" y="198" text-anchor="middle" class="label" fill="var(--blue)">hydrolysis adds water</text>
+          </g>
+
+          <g>
+            <rect x="44" y="226" width="220" height="72" rx="14" class="box box-teal" />
+            <text x="154" y="255" text-anchor="middle" class="label-strong">Secondary alcohol</text>
+            <text x="154" y="275" text-anchor="middle" class="label">–OH on a middle carbon</text>
+
+            <line x1="272" y1="262" x2="332" y2="262" class="arrow" />
+            <path d="m332 262-8-5v10z" class="arrow-head" />
+            <text x="302" y="248" text-anchor="middle" class="label" fill="var(--amber)">[O]</text>
+
+            <rect x="340" y="226" width="180" height="72" rx="14" class="box box-violet" />
+            <text x="430" y="255" text-anchor="middle" class="label-strong">Ketone</text>
+            <text x="430" y="275" text-anchor="middle" class="label">–CO–</text>
+
+            <text x="548" y="256" class="label" fill="var(--muted)">stops here: ketones resist further oxidation</text>
+          </g>
+
+          <g>
+            <rect x="44" y="340" width="220" height="72" rx="14" class="box box-teal" opacity=".82" />
+            <text x="154" y="369" text-anchor="middle" class="label-strong">Tertiary alcohol</text>
+            <text x="154" y="389" text-anchor="middle" class="label">–OH on a carbon with no H</text>
+
+            <line x1="272" y1="376" x2="332" y2="376" class="arrow" stroke-dasharray="5 5" />
+            <path d="m332 376-8-5v10z" class="arrow-head" />
+            <text x="302" y="362" text-anchor="middle" class="label" fill="var(--coral)">[O]</text>
+
+            <rect x="340" y="340" width="180" height="72" rx="14" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.3" stroke-dasharray="6 4" />
+            <text x="430" y="369" text-anchor="middle" class="label-strong">No reaction</text>
+            <text x="430" y="389" text-anchor="middle" class="label">orange dichromate stays orange</text>
+          </g>
+
+          <line x1="44" y1="440" x2="1056" y2="440" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 7" />
+
+          <g>
+            <rect x="44" y="474" width="220" height="72" rx="14" class="box box-violet" />
+            <text x="154" y="503" text-anchor="middle" class="label-strong">Amino acids</text>
+            <text x="154" y="523" text-anchor="middle" class="label">–NH₂ and –COOH</text>
+
+            <line x1="272" y1="510" x2="332" y2="510" class="arrow" />
+            <path d="m332 510-8-5v10z" class="arrow-head" />
+            <text x="302" y="496" text-anchor="middle" class="label" fill="var(--violet)">condensation</text>
+            <text x="302" y="532" text-anchor="middle" class="label" fill="var(--violet)">–H₂O</text>
+
+            <rect x="340" y="474" width="180" height="72" rx="14" class="box box-violet" />
+            <text x="430" y="503" text-anchor="middle" class="label-strong">Protein</text>
+            <text x="430" y="523" text-anchor="middle" class="label">peptide links</text>
+
+            <path d="M430 556c0 15-38 15-38 0" fill="none" class="arrow" />
+            <path d="m392 556 8 5v-10z" class="arrow-head" />
+            <text x="438" y="575" class="label" fill="var(--blue)">hydrolysis adds water</text>
+          </g>
+
+          <g>
+            <rect x="600" y="474" width="200" height="72" rx="14" class="box box-coral" />
+            <text x="700" y="503" text-anchor="middle" class="label-strong">Unsaturated oil</text>
+            <text x="700" y="523" text-anchor="middle" class="label">C=C in fatty acid chains</text>
+
+            <line x1="808" y1="510" x2="868" y2="510" class="arrow" />
+            <path d="m868 510-8-5v10z" class="arrow-head" />
+            <text x="838" y="496" text-anchor="middle" class="label" fill="var(--coral)">Br₂</text>
+
+            <rect x="876" y="474" width="180" height="72" rx="14" class="box box-coral" />
+            <text x="966" y="503" text-anchor="middle" class="label-strong">Brominated product</text>
+            <text x="966" y="523" text-anchor="middle" class="label">bromine water decolourised</text>
+          </g>
+
+          <g>
+            <text x="44" y="614" class="label-strong" font-size="14">Alkaline hydrolysis</text>
+            <text x="44" y="634" class="label">saponification of fats and oils</text>
+
+            <rect x="600" y="584" width="200" height="72" rx="14" class="box box-teal" />
+            <text x="700" y="613" text-anchor="middle" class="label-strong">Fat / oil</text>
+            <text x="700" y="633" text-anchor="middle" class="label">triglyceride</text>
+
+            <line x1="808" y1="620" x2="868" y2="620" class="arrow" />
+            <path d="m868 620-8-5v10z" class="arrow-head" />
+            <text x="838" y="604" text-anchor="middle" class="label" fill="var(--teal)">+ NaOH</text>
+
+            <rect x="876" y="584" width="180" height="72" rx="14" class="box box-teal" />
+            <text x="966" y="613" text-anchor="middle" class="label-strong">Glycerol + soap</text>
+            <text x="966" y="633" text-anchor="middle" class="label">3 fatty acid salts</text>
+          </g>
+        </svg>
+
+        <div class="map-legend">
+          <span><i class="legend-dot"></i> alcohol / ester</span>
+          <span><i class="legend-dot amber"></i> oxidation products</span>
+          <span><i class="legend-dot coral"></i> acid / unsaturation</span>
+          <span><i class="legend-dot violet"></i> ketone / protein</span>
+          <span>Arrows show the transformation; labels show the reagent or small molecule involved.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section" id="plan" aria-labelledby="plan-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Your route</p>
+          <h2 id="plan-title">The revision plan</h2>
+        </div>
+        <p>Thirty short sessions. Tick them off as you go — the progress ring is saved in your browser. Each week has five sessions: learn, draw, retrieve, apply, then check.</p>
+      </div>
+
+      <div class="progress-card" role="group" aria-label="Revision plan progress">
+        <div class="progress-ring" role="progressbar" aria-label="Plan progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle class="track" cx="32" cy="32" r="25"></circle>
+            <circle class="fill" id="progressRingFill" cx="32" cy="32" r="25"></circle>
+          </svg>
+          <strong data-progress-percent>0%</strong>
+        </div>
+        <div class="progress-copy">
+          <strong>Keep the streak visible</strong>
+          <span><span data-progress-count>0 of 30</span> sessions complete · saved automatically</span>
+          <div class="progress-track" style="margin-top: 9px" aria-hidden="true">
+            <div class="progress-fill" id="progressBar"></div>
+          </div>
+        </div>
+        <button class="btn secondary small" id="resetProgress" type="button">Reset progress</button>
+      </div>
+
+      <div class="week-grid" style="margin-top: 20px">
+        <article class="week-card" data-week="01">
+          <h3>Build the map</h3>
+          <div class="week-focus"><span class="tag">foundations</span><span class="tag amber">naming</span></div>
+          <p>Functional groups, saturation, isomers, intermolecular forces and the bromine test.</p>
+          <details class="sessions">
+            <summary>5 sessions · 2 hours 10 min</summary>
+            <ul class="session-list">
+              <li><label><input type="checkbox" data-progress="w1s1" /><span>Build a functional-group table: alkane, alkene, alcohol, carboxylic acid, ester, aldehyde, ketone.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w1s2" /><span>Naming and drawing drill: 10 straight-chain and branched examples.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w1s3" /><span>Saturated vs unsaturated; define addition; practise the bromine water test.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w1s4" /><span>Explain boiling point, volatility and solubility using hydrogen bonding and London dispersion forces.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w1s5" /><span>Retrieval: blank-page reaction map + 10 multiple-choice questions.</span></label></li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="week-card" data-week="02">
+          <h3>Oxidation and food</h3>
+          <div class="week-focus"><span class="tag amber">oxidation</span><span class="tag coral">aldehydes</span></div>
+          <p>Primary, secondary and tertiary alcohols; tests for aldehydes and ketones; antioxidants.</p>
+          <details class="sessions">
+            <summary>5 sessions · 2 hours 25 min</summary>
+            <ul class="session-list">
+              <li><label><input type="checkbox" data-progress="w2s1" /><span>Classify 12 alcohols as primary, secondary or tertiary.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w2s2" /><span>Draw the oxidation flow chart and write equations using [O].</span></label></li>
+              <li><label><input type="checkbox" data-progress="w2s3" /><span>Make a results table for Fehling's, Tollens' and acidified dichromate(VI).</span></label></li>
+              <li><label><input type="checkbox" data-progress="w2s4" /><span>Antioxidants, rancidity and identifying the substance oxidised in a redox equation.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w2s5" /><span>Exam-style oxidation questions + 10 flashcards.</span></label></li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="week-card" data-week="03">
+          <h3>Acids, esters and fats</h3>
+          <div class="week-focus"><span class="tag">esterification</span><span class="tag coral">hydrolysis</span></div>
+          <p>Carboxylic acid reactions, ester naming, condensation, hydrolysis and unsaturation in oils.</p>
+          <details class="sessions">
+            <summary>5 sessions · 2 hours 40 min</summary>
+            <ul class="session-list">
+              <li><label><input type="checkbox" data-progress="w3s1" /><span>Carboxylic acids + metal oxide, hydroxide and carbonate; name the salts.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w3s2" /><span>Esterification: equation, naming, catalyst and practical set-up.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w3s3" /><span>Hydrolysis: acid vs alkaline conditions; name the products.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w3s4" /><span>Fats and oils: triglyceride structure, melting point and bromine test.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w3s5" /><span>Mixed exam questions on esters, fats and hydrolysis.</span></label></li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="week-card" data-week="04">
+          <h3>Soaps and proteins</h3>
+          <div class="week-focus"><span class="tag">micelles</span><span class="tag violet">peptides</span></div>
+          <p>Saponification, detergents, emulsions, amino acid condensation and denaturation.</p>
+          <details class="sessions">
+            <summary>5 sessions · 2 hours 30 min</summary>
+            <ul class="session-list">
+              <li><label><input type="checkbox" data-progress="w4s1" /><span>Draw the alkaline hydrolysis of a triglyceride and a labelled soap micelle.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w4s2" /><span>Hard water scum, soapless detergents and emulsifiers.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w4s3" /><span>Amino acids, peptide link and condensation polymerisation.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w4s4" /><span>Hydrolysis vs denaturation: compare and correct common misconceptions.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w4s5" /><span>Diagram practice + exam questions on soaps and proteins.</span></label></li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="week-card" data-week="05">
+          <h3>Fragrances and radicals</h3>
+          <div class="week-focus"><span class="tag violet">terpenes</span><span class="tag amber">free radicals</span></div>
+          <p>Isoprene units, essential oils, UV damage, chain reactions and radical scavengers.</p>
+          <details class="sessions">
+            <summary>5 sessions · 2 hours 35 min</summary>
+            <ul class="session-list">
+              <li><label><input type="checkbox" data-progress="w5s1" /><span>Identify isoprene units and count them in terpene structures.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w5s2" /><span>Write and classify initiation, propagation and termination equations.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w5s3" /><span>Skin care, UV damage and free radical scavengers.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w5s4" /><span>Mixed drill: identify the reaction type from a diagram or equation.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w5s5" /><span>Timed Nature's chemistry past-paper section (about 45 min).</span></label></li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="week-card" data-week="06">
+          <h3>Exam craft</h3>
+          <div class="week-focus"><span class="tag coral">past papers</span><span class="tag">error log</span></div>
+          <p>Retrieval under time, diagram accuracy, command words and a final weak-area sweep.</p>
+          <details class="sessions">
+            <summary>5 sessions · 3 hours 10 min</summary>
+            <ul class="session-list">
+              <li><label><input type="checkbox" data-progress="w6s1" /><span>Flashcard sweep: all 40 cards, then focus on the review pile.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w6s2" /><span>Paper 1 multiple choice under timed conditions (40 min) + review.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w6s3" /><span>Paper 2 organic questions, timed, then mark with the official scheme.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w6s4" /><span>Drawing drill: six structures or reaction schemes from memory.</span></label></li>
+              <li><label><input type="checkbox" data-progress="w6s5" /><span>Write a one-page error log and a five-point final summary.</span></label></li>
+            </ul>
+          </details>
+        </article>
+      </div>
+
+      <div class="grid-2" style="margin-top: 20px">
+        <div class="callout">
+          <h4>Only got two weeks?</h4>
+          <p>Use the compression below, then do one full past paper and spend the final two days on your error log. Do not skip drawing structures and equations by hand.</p>
+          <p class="small"><b>Days 1–2:</b> foundations + oxidation · <b>Days 3–4:</b> esters, fats, hydrolysis · <b>Days 5–6:</b> soaps, proteins · <b>Day 7:</b> radicals + fragrances · <b>Day 8:</b> mixed retrieval · <b>Days 9–10:</b> timed papers + review.</p>
+        </div>
+        <div class="callout amber">
+          <h4>Spaced retrieval rhythm</h4>
+          <p>Review each new reaction card after <b>1 day</b>, <b>3 days</b>, <b>7 days</b> and <b>14 days</b>. Use the flashcards page; mark a card “Review” if you hesitate, even if you eventually get it right.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section" aria-labelledby="glance-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">At a glance</p>
+          <h2 id="glance-title">Core reactions to know</h2>
+        </div>
+        <p>If you can complete this table from memory, you have the skeleton of the organic chemistry unit.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Reaction</th>
+              <th>Functional group change</th>
+              <th>Key reagent / condition</th>
+              <th>Tell-tale sign or product</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="reactions.html#oxidation">Oxidation of a primary alcohol</a></td>
+              <td>–OH → –CHO → –COOH</td>
+              <td>Acidified dichromate(VI), heat; excess oxidant for the acid</td>
+              <td>Orange → green; aldehyde then carboxylic acid</td>
+            </tr>
+            <tr>
+              <td><a href="reactions.html#oxidation">Oxidation of a secondary alcohol</a></td>
+              <td>–OH → C=O (ketone)</td>
+              <td>Acidified dichromate(VI), heat</td>
+              <td>Orange → green; ketone; no further oxidation</td>
+            </tr>
+            <tr>
+              <td><a href="reactions.html#tests">Aldehyde tests</a></td>
+              <td>–CHO → –COOH</td>
+              <td>Fehling's, Tollens' or acidified dichromate(VI)</td>
+              <td>Brick-red precipitate; silver mirror; orange → green</td>
+            </tr>
+            <tr>
+              <td><a href="reactions.html#esterification">Esterification</a></td>
+              <td>–COOH + –OH → –COO–</td>
+              <td>Concentrated sulfuric acid catalyst, warm</td>
+              <td>Ester + water; fruity smell; reversible</td>
+            </tr>
+            <tr>
+              <td><a href="reactions.html#hydrolysis">Ester hydrolysis</a></td>
+              <td>–COO– → –COOH + –OH</td>
+              <td>Water with acid, or aqueous alkali</td>
+              <td>Carboxylic acid + alcohol, or carboxylate salt + alcohol</td>
+            </tr>
+            <tr>
+              <td><a href="reactions.html#fats">Bromine test for unsaturation</a></td>
+              <td>C=C → C–C</td>
+              <td>Bromine solution, shake</td>
+              <td>Orange-brown → colourless</td>
+            </tr>
+            <tr>
+              <td><a href="reactions.html#soap">Soap formation</a></td>
+              <td>Triglyceride → glycerol + soap</td>
+              <td>NaOH, heat (alkaline hydrolysis)</td>
+              <td>Glycerol + sodium salts of fatty acids</td>
+            </tr>
+            <tr>
+              <td><a href="reactions.html#proteins">Protein condensation / hydrolysis</a></td>
+              <td>–NH₂ + –COOH ⇌ –CONH–</td>
+              <td>Condensation; hydrolysis with water/enzymes</td>
+              <td>Peptide link + water; amino acids on hydrolysis</td>
+            </tr>
+            <tr>
+              <td><a href="reactions.html#radicals">Free radical chain</a></td>
+              <td>Bond homolysis → radicals</td>
+              <td>UV light or initiator; propagation; termination</td>
+              <td>Radical equations; stable product at termination</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="shell section-tight" aria-labelledby="prompt-title">
+      <div class="card card-pad" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center">
+        <div>
+          <p class="eyebrow">Twenty-minute win</p>
+          <h2 id="prompt-title" style="font-size: clamp(1.4rem, 2.5vw, 2rem)">Today's retrieval prompt</h2>
+          <p class="lede" id="todayPrompt" style="margin-bottom: 0; font-size: 1rem">Loading a prompt…</p>
+        </div>
+        <button class="btn secondary" id="newPrompt" type="button">New prompt</button>
+      </div>
+    </section>
+
+    <section class="shell section" aria-labelledby="method-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">How to revise</p>
+          <h2 id="method-title">Use the 20-minute loop</h2>
+        </div>
+        <p>Short, active sessions beat long passive reading. Each loop ends with evidence that you can retrieve the chemistry without notes.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card card-pad">
+          <div class="resource-icon">01</div>
+          <h3>Close the book</h3>
+          <p class="small">Write the reaction map, definitions or equation from memory. Retrieval is the learning, not the test after learning.</p>
+        </article>
+        <article class="card card-pad">
+          <div class="resource-icon">02</div>
+          <h3>Draw it</h3>
+          <p class="small">Use full or shortened structural formulae. Label the functional group, reagent, condition and observation. A diagram you can draw is a concept you own.</p>
+        </article>
+        <article class="card card-pad">
+          <div class="resource-icon">03</div>
+          <h3>Apply it</h3>
+          <p class="small">Answer one exam-style question and mark it against the scheme. Add the mark you missed to an error log; revisit it in three days.</p>
+        </article>
+      </div>
+
+      <div class="grid-2" style="margin-top: 20px">
+        <a class="card card-pad" href="flashcards.html" style="text-decoration: none">
+          <p class="eyebrow">Retrieval</p>
+          <h3>40 flashcards <span aria-hidden="true">→</span></h3>
+          <p class="small">Flip, shuffle, filter by topic and mark cards for review. Your known/review piles are saved.</p>
+        </a>
+        <a class="card card-pad" href="quiz.html" style="text-decoration: none">
+          <p class="eyebrow">Check</p>
+          <h3>Quiz arena <span aria-hidden="true">→</span></h3>
+          <p class="small">Multiple choice, true/false, fill-the-gap, matching, equation completion and exam-style answers.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+              <path d="M12 2.7 20 7.3v9.4L12 21.3 4 16.7V7.3L12 2.7Z" />
+              <circle cx="12" cy="12" r="2.3" fill="currentColor" stroke="none" />
+            </svg>
+          </span>
+          <span class="brand-text">Organic Reactions<small>Higher Chemistry</small></span>
+        </a>
+        <p>Independent revision resource aligned to the current Higher Chemistry Nature's chemistry content. Always check the current course specification and your teacher's guidance. External links open in a new tab.</p>
+      </div>
+      <div class="footer-links">
+        <a href="Higher-Chemistry-Organic-Reactions-Revision-Plan.md">Markdown plan</a>
+        <a href="reactions.html">Reaction lab</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="resources.html">Resources</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/data.js" defer></script>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
