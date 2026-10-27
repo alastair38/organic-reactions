@@ -394,10 +394,11 @@ p {
 
 .section-head {
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: space-between;
   gap: 24px;
   margin-bottom: 30px;
+  border-bottom: 1px solid var(--line);
 }
 
 .section-head p {
