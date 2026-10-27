@@ -231,6 +231,9 @@
     const tagList = document.getElementById("flashTags");
     const knownButton = document.getElementById("markKnown");
     const reviewButton = document.getElementById("markReview");
+    const resetKnownButton = document.getElementById("resetKnown");
+    const resetReviewButton = document.getElementById("resetReview");
+    const resetStatus = document.getElementById("flashResetStatus");
 
     const saved = safeGet(FLASH_KEY, { known: [], review: [] });
     const known = new Set(Array.isArray(saved.known) ? saved.known : []);
@@ -350,6 +353,22 @@
       paintCardState();
     }
 
+    function resetMarks(setName) {
+      if (setName === "known") {
+        known.clear();
+      } else {
+        review.clear();
+      }
+      safeSet(FLASH_KEY, { known: Array.from(known), review: Array.from(review) });
+      paintCounts();
+      paintCardState();
+      if (resetStatus) {
+        resetStatus.textContent = setName === "known"
+          ? "Got it total reset."
+          : "Review total reset.";
+      }
+    }
+
     card.addEventListener("click", flip);
     card.addEventListener("keydown", function (event) {
       if (event.key === "Enter" || event.key === " ") {
@@ -370,6 +389,8 @@
     if (shuffleButton) shuffleButton.addEventListener("click", shuffle);
     if (knownButton) knownButton.addEventListener("click", function () { mark("known"); });
     if (reviewButton) reviewButton.addEventListener("click", function () { mark("review"); });
+    if (resetKnownButton) resetKnownButton.addEventListener("click", function () { resetMarks("known"); });
+    if (resetReviewButton) resetReviewButton.addEventListener("click", function () { resetMarks("review"); });
 
     document.addEventListener("keydown", function (event) {
       if (event.target.matches("input, textarea, select, button, a")) return;

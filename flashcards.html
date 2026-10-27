@@ -91,6 +91,11 @@
         <button class="btn ghost flash-known" id="markKnown" type="button" aria-pressed="false">Got it</button>
         <button class="btn ghost flash-review" id="markReview" type="button" aria-pressed="false">Review</button>
       </div>
+      <div class="flashcard-controls" style="margin-top: 8px">
+        <button class="btn secondary small" id="resetKnown" type="button" title="Clear the Got it total from this browser">Reset Got it</button>
+        <button class="btn secondary small" id="resetReview" type="button" title="Clear the Review total from this browser">Reset Review</button>
+      </div>
+      <p class="small muted" id="flashResetStatus" role="status" aria-live="polite" style="text-align: center; margin: 10px 0 0"></p>
 
       <noscript>
         <div class="callout warn" style="margin-top: 22px">
